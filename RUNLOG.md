@@ -55,3 +55,11 @@
    - **delay_ms=50**: 0.87% Misses, 1.88x Overhead -> **VALID**
    - **delay_ms=40**: 4.00% Misses, 1.88x Overhead -> **INVALID**
    - **Conclusion**: The absolute lowest valid delay score for Profile A is **50ms**. 40ms is mathematically impossible due to maximum network jitter rendering recovery packets physically late.
+
+10. **Profile B Delay Tuning (Final Lock-In)**
+   - **delay_ms=100**: 1.40% Misses, 1.97x Overhead -> **INVALID**
+   - **delay_ms=110**: 1.27% Misses, 1.97x Overhead -> **INVALID**
+   - **delay_ms=130**: 1.20% Misses, 1.97x Overhead -> **INVALID**
+   - **delay_ms=140**: 1.13% Misses, 1.97x Overhead -> **INVALID**
+   - **delay_ms=150**: 1.00% Misses, 1.97x Overhead -> **VALID**
+   - **Conclusion**: The heavy packet loss bursts and high jitter in Profile B require a minimum of **150ms** delay to reliably secure a <=1.00% miss rate across all test permutations.
